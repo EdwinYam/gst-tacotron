@@ -34,7 +34,7 @@ def preprocess_blizzard2013(args):
 
 
 def preprocess_vctk(args):
-    in_dir = os.path.join(arg.base_dir, 'database/VCTK-Corpus')
+    in_dir = os.path.join(args.base_dir, 'database/VCTK-Corpus')
     out_dir = os.path.join(args.base_dir, args.output)
     os.makedirs(out_dir, exist_ok=True)
     metadata = vctk.build_from_path(

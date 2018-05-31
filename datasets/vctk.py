@@ -33,7 +33,7 @@ def build_from_path(in_dir, out_dir, num_workers=1, tqdm=lambda x: x):
             wav_path = os.path.join(dir_path.replace(
                 'txt', 'wav48', 1), file_name[:-4]+'.wav')
             futures.append(executor.submit(
-                partial(_process_utterence, out_dir, index, wav_path, text)))
+                partial(_process_utterance, out_dir, index, wav_path, text)))
             index += 1
 
     return [future.result() for future in tqdm(futures)]
